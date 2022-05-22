@@ -1,2 +1,2 @@
-from . import models, views
+from . import models
 

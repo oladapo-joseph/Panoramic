@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="profile_tree" model="ir.ui.view">
+        <field name="name">coin.profile.tree</field>
+        <field name="model">coin.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="username"/>
+                <field name="coin"/>
+                <field name="detail"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <record id="profile_form" model="ir.ui.view">
+        <field name="name">coin.profile.form</field>
+        <field name="model">coin.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="username"/>
+                        </group>
+                        <group>
+                            <field name="coin"/>
+                            <field name="detail"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="profile_action" model="ir.actions.act_window">
+        <field name="name">Coins</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">coin.profile</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create your first coin profile
+            </p>
+        </field>
+    </record>
+    
+    <menuitem id="coin_root"
+    name="Coin"
+    sequence="10"/>
+
+    <menuitem id="coin_profile_root"
+    name="Coins"
+    parent="coin_root"
+    sequence="10"/>
+
+
+    <menuitem id="coin_profile"
+              name="Coins"
+              parent="coin_profile_root"
+              action="profile_action"
+              sequence="10"/>
+
+
+</odoo>
