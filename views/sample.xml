@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_id">
+            <field name="name">view.name</field>
+            <field name="model">object_name</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <!-- view content: <form>, <tree>, <graph>, ... -->
+                    <tree string="Idea list">
+                        <field name="name"/>
+                        <field name="inventor_id"/>
+                    </tree>
+                    <form string="Idea form">
+                        <group colspan="4">
+                            <group colspan="2" col="2">
+                                <separator string="General stuff" colspan="2"/>
+                                <field name="name"/>
+                                <field name="inventor_id"/>
+                            </group>
+                    
+                            <group colspan="2" col="2">
+                                <separator string="Dates" colspan="2"/>
+                                <field name="active"/>
+                                <field name="invent_date" readonly="1"/>
+                            </group>
+                    
+                            <notebook colspan="4">
+                                <page string="Description">
+                                    <field name="description" nolabel="1"/>
+                                </page>
+                            </notebook>
+                    
+                            <field name="state"/>
+                        </group>
+                    </form>  
+            </field>
+        </record>
+    
+
+
+    </data>
+
+
+</odoo>
